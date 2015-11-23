@@ -1,0 +1,34 @@
+﻿{
+    "manifest_version": 2,
+    "name": "豆瓣中介过滤器",
+    "version": "0.0.1",
+    "description": "简易制作的清除豆瓣页面中介广告帖子的chrome插件",
+    "permissions": [
+        "http://www.douban.com/*",
+        "http://note.youdao.com/*"
+    ],
+    "icons": {
+        "32": "./img/icon-douban-32.png",
+        "128": "./img/icon-douban-128.png"
+    },
+    "browser_action": {
+        "default_icon": "./img/icon-douban-32.png",
+        "default_popup": "./html/popup.html",
+        "default_title": "豆瓣中介过滤器",
+        "default_popup": "./html/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.douban.com/*"
+            ],
+            "js": [
+                "./assets/jquery-2.0.0.min.js",
+                "./js/content_script.js"
+            ]
+        }
+    ],
+    "background": {
+        "page": "./html/background.html"
+    }
+}
