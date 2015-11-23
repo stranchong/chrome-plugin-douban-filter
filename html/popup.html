@@ -4,12 +4,21 @@
     <title>
         Innermediary Filter
     </title>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/popup.css"/>
 </head>
 <body>
-<input id="update_btn" type="button" value="刷新中介数据">
+<ul class="nav nav-pills nav-stacked">
+    <li class="profile ng-scope">
+        <a id="update_btn" href="#" role="button">
+            <span class="ng-binding ng-isolate-scope">
+                [更新数据]
+            </span>
+        </a>
+    </li>
+</ul>
 </body>
-<script src="../assets/jquery-2.0.0.min.js"></script>
+<script src="../lib/jquery/jquery-2.0.0.min.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/popup.js"></script>
 </html>
