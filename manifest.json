@@ -1,8 +1,8 @@
 ﻿{
     "manifest_version": 2,
-    "name": "豆瓣中介过滤器",
+    "name": "Douban Beautifier(beta)",
     "version": "0.0.1",
-    "description": "简易制作的清除豆瓣页面中介广告帖子的chrome插件",
+    "description": "清除豆瓣页面中介广告帖",
     "permissions": [
         "http://www.douban.com/*",
         "http://note.youdao.com/*"
@@ -14,7 +14,7 @@
     "browser_action": {
         "default_icon": "./img/icon-douban-32.png",
         "default_popup": "./html/popup.html",
-        "default_title": "豆瓣中介过滤器",
+        "default_title": "Douban Beautifier(beta)",
         "default_popup": "./html/popup.html"
     },
     "content_scripts": [

@@ -8,7 +8,7 @@
         var msg = {cmdType: "get_blacklist"};
         chrome.runtime.sendMessage(msg, function (response) {
             if (response && response.statusCode === "success" && response.cmdType === "get_blacklist") {
-                console.log(response.blackList);
+                //console.log(response.blackList);
                 that.hideBlackList(response.blackList);
             }
         });
@@ -17,15 +17,11 @@
         var $table = $(".olt");
         if ($table && $table.length > 0) {
             var trs = $table.find("tr");
-            for (var i = 0; i < trs.length; i++) {
-                if ($(trs[i]).is(":hidden")) {
-                    continue;
-                }
-
-                var hrefs = $(trs[i]).find("a");
-                var author = $(hrefs[1]).text();
-                if (blackList[author]) {
-                    $(trs[i]).hide();
+            for (var i = 1; i < trs.length; i++) {
+                var href = $(trs[i]).find("a")[1].href;
+                var uid = href.substring(href.indexOf("people/") + 7, href.lastIndexOf("/"));
+                if (blackList[uid]) {
+                    $(trs[i]).remove();
                 }
             }
         }
@@ -36,7 +32,7 @@
             if (request && request.statusCode === "success") {
                 switch (request.cmdType) {
                     case "get_blacklist":
-                        console.log(request.blackList);
+                        //console.log(request.blackList);
                         that.hideBlackList(request.blackList);
                         break;
                 }
